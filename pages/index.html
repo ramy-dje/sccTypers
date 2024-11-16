@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Typing Race</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="images/sccLogo.png" alt="SCC Logo" class="logo">
+    </header>
+    <div id="login" class="screen">
+      <h1>Typing Race</h1>
+      <div class="form">
+        <input type="text" id="playerName" placeholder="Enter your name" />
+        <button onclick="joinGame()">Join Game</button>
+      </div>
+      <p class="powered-by">powered by scc workshops team</p>
+    </div>
+
+    <div id="game" class="screen hidden">
+      <div id="countdown" class="countdown"></div>
+      <div class="game-container">
+        <div class="game-header">
+          <div id="timer" class="timer">0:00</div>
+        </div>
+        <div id="textDisplay" class="text-display"></div>
+        <input type="text" id="textInput" class="text-input" disabled 
+               placeholder="Wait for the countdown..." />
+        <div id="players" class="players"></div>
+        <div id="sortedPlayers" class="sorted-players"></div>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay hidden"></div>
+    <div id="victoryPopup" class="victory-popup hidden">
+      <h2>🎉 Victory! 🎉</h2>
+      <p id="winnerName"></p>
+      <div class="stats">
+        <div class="stat">
+          <div id="timeValue" class="stat-value">0:00</div>
+          <div class="stat-label">Time</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/game.js"></script>
+  </body>
+</html>
