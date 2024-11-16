@@ -11,7 +11,7 @@ const port = 3010;
 app.use(express.static('static'));
 
 const players = new Map();
-const gameText = "this is a nice day with css club";
+const gameText = "Start Coding Club empowers aspiring developers by providing hands-on programming education alongside essential freelancing and entrepreneurial skills. Through workshops, mentorship, and collaborative projects, members learn to code effectively while gaining practical insights into building successful tech careers and businesses.";
 let gameInProgress = false;
 let startTime = null;
 let gameWinner = null;
