@@ -119,12 +119,13 @@ document.getElementById('textInput').addEventListener('input', (e) => {
   const input = e.target.value;
   const currentIndex = input.length - 1;
   
+  
+  highlightText(input);
   if (currentIndex >= 0 && input[currentIndex] !== gameText[currentIndex]) {
     e.target.value = input.slice(0, -1);
     return;
   }
   
-  highlightText(input);
   const progress = (input.length / gameText.length) * 100;
   
   socket.emit('progress', {
@@ -135,4 +136,8 @@ document.getElementById('textInput').addEventListener('input', (e) => {
     e.target.disabled = true;
     if (timerInterval) clearInterval(timerInterval);
   }
+});
+
+document.getElementById('textInput').addEventListener('paste', (e) => {
+  e.preventDefault();
 });
